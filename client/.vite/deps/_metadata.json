@@ -1,0 +1,91 @@
+{
+  "hash": "de3e36d8",
+  "configHash": "85530c65",
+  "lockfileHash": "5e9f7bb5",
+  "browserHash": "83bcb7d3",
+  "optimized": {
+    "react": {
+      "src": "../../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "07a8d28c",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../../node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "cf22e42e",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "c7ae7c61",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../../node_modules/react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "f0b75dd8",
+      "needsInterop": true
+    },
+    "lucide-react": {
+      "src": "../../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "65924a1d",
+      "needsInterop": false
+    },
+    "pyodide": {
+      "src": "../../../node_modules/pyodide/pyodide.mjs",
+      "file": "pyodide.js",
+      "fileHash": "8892d513",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "a2d07b16",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "0d58f4c4",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "node_url-73N2GMD5": {
+      "file": "node_url-73N2GMD5.js"
+    },
+    "node_fs-YNKJHPX4": {
+      "file": "node_fs-YNKJHPX4.js"
+    },
+    "promises-JX74NTGR": {
+      "file": "promises-JX74NTGR.js"
+    },
+    "node_vm-GCVD2FAR": {
+      "file": "node_vm-GCVD2FAR.js"
+    },
+    "node_path-JG7XW5QO": {
+      "file": "node_path-JG7XW5QO.js"
+    },
+    "node_crypto-PQ3PIQEC": {
+      "file": "node_crypto-PQ3PIQEC.js"
+    },
+    "ws-JYKLUZ7E": {
+      "file": "ws-JYKLUZ7E.js"
+    },
+    "node_child_process-4WUL3FTP": {
+      "file": "node_child_process-4WUL3FTP.js"
+    },
+    "chunk-VXRKAGVO": {
+      "file": "chunk-VXRKAGVO.js"
+    },
+    "chunk-KFFOUT6Q": {
+      "file": "chunk-KFFOUT6Q.js"
+    },
+    "chunk-PR4QN5HX": {
+      "file": "chunk-PR4QN5HX.js"
+    }
+  }
+}

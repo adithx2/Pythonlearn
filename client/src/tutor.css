@@ -1,0 +1,6 @@
+.tutor-connection{display:block;margin-top:3px;color:var(--soft);font-size:10px}
+.tutor-connection[data-ready="true"]{color:#4d8449}
+.answer-sources{display:grid;gap:5px;margin-top:12px;padding-top:9px;border-top:1px solid var(--line)}
+.answer-sources>small{color:var(--muted);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
+.answer-sources a{display:flex;align-items:center;gap:5px;width:fit-content;color:var(--green);font-size:11px;text-decoration:underline;text-underline-offset:2px}
+.answer-sources a:hover{opacity:.75}

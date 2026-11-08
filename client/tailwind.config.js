@@ -1,0 +1,1 @@
+export default { content: { relative: true, files: ['./index.html', './src/**/*.{js,jsx}'] }, theme: { extend: { colors: { ink: '#101d1a', forest: '#173b30', leaf: '#b9f36b', paper: '#f7f8f4', muted: '#777d76' }, fontFamily: { sans: ['DM Sans', 'sans-serif'], mono: ['DM Mono', 'monospace'] } } }, plugins: [] };
