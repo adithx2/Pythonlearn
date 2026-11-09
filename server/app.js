@@ -7,8 +7,6 @@ import { isDbReady } from './config/db.js';
 
 const app = express();
 
-// Allow requests from the Vercel frontend (and localhost in dev).
-// Set CLIENT_ORIGIN in your Render environment to your Vercel URL.
 const allowedOrigins = process.env.CLIENT_ORIGIN
   ? [process.env.CLIENT_ORIGIN, 'http://localhost:5173', 'http://localhost:4002']
   : true; // permissive in dev when env var is absent
@@ -23,8 +21,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/tutor', tutorRoutes);
 
+
 // In production the client is served by Vercel, not this server.
 // Keep a small fallback so hitting the Render URL directly is friendly.
-app.get('/', (_req, res) => res.json({ service: 'PythonLearn API', status: 'ok' }));
+app.get('/', (_req, res) => res.json({ service: 'PythonLearn API',  status: 'ok' }));
 
 export default app;

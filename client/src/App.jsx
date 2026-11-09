@@ -176,7 +176,7 @@ function AuthForm({ mode = 'login', onToggleMode, onSuccess }) {
 
       <div className="auth-switch">
         {currentMode === 'register' ? (
-          <span>Already have an account? <button type="button" className="auth-switch-link" onClick={() => switchMode('login')}>Sign in</button></span>
+          <span>Already have an account? <button type="button" className="auth-switch-link" onClick={() => switchMode('login')}>Sign In</button></span>
         ) : (
           <span>Don’t have an account? <button type="button" className="auth-switch-link" onClick={() => switchMode('register')}>Create one</button></span>
         )}
@@ -336,7 +336,7 @@ function App() {
             <div className="sidebar-auth-cta">
               <div className="sidebar-auth-text">
                 <strong>Save your progress</strong>
-                <small>Sign in to sync your learning</small>
+                <small>Sign in to your learning</small>
               </div>
               <div className="sidebar-auth-buttons">
                 <button className="button button-primary btn-sm" onClick={() => openAuth('register')}>Register</button>
@@ -360,7 +360,7 @@ function App() {
             <strong>{breadcrumb(location.pathname)}</strong>
           </div>
           <div className="top-actions">
-            <span className="free-pill"><span /> 100% free & open source</span>
+            <span className="free-pill"><span /> Open source</span>
             {user ? (
               <div className="topbar-user-badge">
                 <span className="topbar-avatar">{(user.name || 'U')[0].toUpperCase()}</span>

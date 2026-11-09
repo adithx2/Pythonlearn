@@ -14,7 +14,7 @@ export async function register(req, res) {
     const user = await User.create({ name, email, password: await bcrypt.hash(password, 12) });
     res.status(201).json({ token: tokenFor(user), user: publicUser(user) });
   } catch (error) {
-    res.status(error.code === 11000 ? 409 : 500).json({ error: error.code === 11000 ? 'An account with this email already exists.' : 'Could not create your account.' });
+    res.status(error.code === 11000 ? 409 : 500).json({ error: error.code === 11000 ? 'An account with this email already exist.' : 'Could not create your account.' });
   }
 }
 

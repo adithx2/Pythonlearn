@@ -38,6 +38,7 @@ export const lessons = [
   { title:'Python Projects', level:'Advanced', duration:'Project', tag:'Capstone', description:'A small project brings concepts together. Build a checklist with data, a function, and a loop, then add features one step at a time.', code:'tasks = ["Learn Python", "Build something"]\n\ndef show_tasks(items):\n    for item in items:\n        print("☐", item)\n\nshow_tasks(tasks)', output:'☐ Learn Python\n☐ Build something', exercise:'Add a new task and write a function that counts how many tasks are in the list.', explanation:'tasks stores the data. show_tasks() receives that list, loops through its items, and prints each one.' }
 ];
 
+
 export const topicQuizzes = {
   'Loops': [
     { q: 'What does range(1, 5) produce in a for loop?', options: ['1, 2, 3, 4, 5', '1, 2, 3, 4', '0, 1, 2, 3, 4'], answer: 1, why: 'range(start, stop) stops just before the stop value, so 1 through 4 are generated.' },

@@ -155,7 +155,7 @@ function explainCode(question) {
     const code = line.trim();
     let note;
     if (!code) note = 'This blank line separates parts of the program.';
-    else if (code.startsWith('#')) note = 'A comment for humans reading the code; Python ignores it.';
+    else if (code.startsWith('#')) note = 'A comment for humans reading the code; Python ignore it.';
     else if (/^print\s*\(/.test(code)) note = 'Displays the given value in the output console.';
     else if (/^for\s+(.+?)\s+in\s+(.+):/.test(code)) { const [, item, values] = code.match(/^for\s+(.+?)\s+in\s+(.+):/); note = `Starts a for loop: assigns each value from ${values} to ${item} and runs the indented body.`; }
     else if (/^while\s+(.+):/.test(code)) note = `Starts a while loop: repeats the indented body as long as ${code.slice(6, -1)} remains True.`;
