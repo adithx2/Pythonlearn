@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { apiUrl } from './api.js';
 import { BookOpen, Check, ChevronRight, CircleHelp, Command, Lightbulb, Play, RotateCcw, Sparkles, Terminal, X } from 'lucide-react';
 
 let pyodidePromise;
@@ -39,7 +40,7 @@ export default function PlaygroundPage(){
   const explain=async()=>{
     setTab('help');setExplaining(true);setExplanation('');
     try{
-      const response=await fetch('/api/tutor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({language:'English',messages:[{role:'user',content:`Explain this Python code line by line for a beginner. For each line, describe what it does in simple language. Do not ask me to paste code. Code:\n${code}`} ]})});
+      const response=await fetch(apiUrl('/api/tutor'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({language:'English',messages:[{role:'user',content:`Explain this Python code line by line for a beginner. For each line, describe what it does in simple language. Do not ask me to paste code. Code:\n${code}`} ]})});
       const data=await response.json();
       if(!response.ok)throw new Error(data.error||'Tutor unavailable');
       setExplanation(data.reply);

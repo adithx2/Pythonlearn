@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { apiUrl } from './api.js';
 import { Link, NavLink, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { ArrowDown, ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, ChevronRight, CircleHelp, Clock3, Code2, Command, Compass, ExternalLink, Github, GraduationCap, LayoutDashboard, Lightbulb, ListChecks, Menu, Moon, Play, RotateCcw, Send, Sparkles, Sun, Terminal, Zap, X, LogIn, LogOut, User, Lock, Mail, AlertCircle } from 'lucide-react';
 import { curriculum, lessons, quizQuestions, topicQuizzes, getQuizForTopic } from './data.js';
@@ -75,7 +76,7 @@ function AuthForm({ mode = 'login', onToggleMode, onSuccess }) {
 
     setBusy(true);
     try {
-      const endpoint = currentMode === 'register' ? '/api/auth/register' : '/api/auth/login';
+      const endpoint = currentMode === 'register' ? apiUrl('/api/auth/register') : apiUrl('/api/auth/login');
       const body = currentMode === 'register' ? { name: name.trim(), email: trimmedEmail, password } : { email: trimmedEmail, password };
       
       const res = await fetch(endpoint, {
@@ -243,7 +244,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('pl-token');
     if (!token) return;
-    fetch('/api/progress', {
+    fetch(apiUrl('/api/progress'), {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.ok ? r.json() : Promise.reject())
@@ -276,7 +277,7 @@ function App() {
       const merged = Array.from(new Set([...localDone, ...data.user.completedLessons]));
       localStorage.setItem('pl-done', JSON.stringify(merged));
       if (merged.length > data.user.completedLessons.length) {
-        fetch('/api/progress', {
+        fetch(apiUrl('/api/progress'), {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${data.token}` },
           body: JSON.stringify({ completedLessons: merged })
@@ -698,7 +699,7 @@ function Lesson() {
 
     const token = localStorage.getItem('pl-token');
     if (token) {
-      fetch('/api/progress', {
+      fetch(apiUrl('/api/progress'), {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ completedLessons: d })
@@ -803,7 +804,7 @@ function Tutor() {
 
   useEffect(() => {
     let active = true;
-    fetch('/api/tutor/status')
+    fetch(apiUrl('/api/tutor/status'))
       .then(response => response.ok ? response.json() : Promise.reject())
       .then(status => {
         if (!active) return;
@@ -824,7 +825,7 @@ function Tutor() {
     setInput('');
     setBusy(true);
     try {
-      const response = await fetch('/api/tutor', {
+      const response = await fetch(apiUrl('/api/tutor'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: history.map(({ role, content }) => ({ role, content })), language: lang })
