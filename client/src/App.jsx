@@ -78,7 +78,7 @@ function AuthForm({ mode = 'login', onToggleMode, onSuccess }) {
     try {
       const endpoint = currentMode === 'register' ? apiUrl('/api/auth/register') : apiUrl('/api/auth/login');
       const body = currentMode === 'register' ? { name: name.trim(), email: trimmedEmail, password } : { email: trimmedEmail, password };
-      
+
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -281,7 +281,7 @@ function App() {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${data.token}` },
           body: JSON.stringify({ completedLessons: merged })
-        }).catch(() => {});
+        }).catch(() => { });
       }
     }
     setAuthModal({ open: false, mode: 'login' });
@@ -703,7 +703,7 @@ function Lesson() {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ completedLessons: d })
-      }).catch(() => {});
+      }).catch(() => { });
     }
   };
 
